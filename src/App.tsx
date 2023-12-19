@@ -1,7 +1,7 @@
-import "./styles/global.css";
 import { useEffect } from "react";
-import { Notifications } from "./components";
 import { notificationsData } from "./lib/data";
+import { HomePage, NotificationPage } from "./components";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useNotificationsContext } from "./context/NotificationsContext";
 
 function App() {
@@ -17,15 +17,28 @@ function App() {
         category: notification.category,
         read: notification.read,
         archived: notification.archived,
-        interaction: notification.interaction,
+        interactions: Array.isArray(notification.interactions)
+          ? [...notification.interactions]
+          : null,
       })),
     );
   }, [setNotifications]);
 
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <HomePage />,
+    },
+    {
+      path: "/notification/:id",
+      element: <NotificationPage />,
+    },
+  ]);
+
   return (
     <section className="section">
       <div className="container">
-        <Notifications />
+        <RouterProvider router={router} />
       </div>
     </section>
   );

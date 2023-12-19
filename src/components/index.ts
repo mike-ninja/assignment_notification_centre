@@ -1,3 +1,4 @@
-import Notifications from "./Notifications";
+import HomePage from "./HomePage";
+import NotificationPage from "./NotificationPage";
 
-export { Notifications };
+export { HomePage, NotificationPage };

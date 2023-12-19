@@ -13,7 +13,7 @@ export type NotificationType = {
   archived: boolean;
   description: string;
   category: CategoryType;
-  interaction: InteractionType | null;
+  interactions: InteractionType[] | null;
 };
 
 export type TabType = "Unarchived" | "Archived";

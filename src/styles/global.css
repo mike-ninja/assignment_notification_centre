@@ -1,5 +1,10 @@
 { /* General */}
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 h2, p {
   margin: 0;
 }
@@ -54,7 +59,7 @@ h2, p {
 }
 
 .notification_icon {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .notification_buttons_wrapper {

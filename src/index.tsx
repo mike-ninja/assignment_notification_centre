@@ -1,7 +1,7 @@
 import "./index.css";
 import App from "./App";
-import React from "react";
-import ReactDOM from "react-dom/client";
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import NotificationsContextProvider from "./context/NotificationsContext";
 
@@ -10,9 +10,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <NotificationsContextProvider>
-      <App />
-    </NotificationsContextProvider>
+    <main>
+      <NotificationsContextProvider>
+        <App />
+      </NotificationsContextProvider>
+    </main>
   </React.StrictMode>,
 );
 

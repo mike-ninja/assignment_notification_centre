@@ -9,7 +9,7 @@ export default function Archived() {
       {notifications.map((noti) =>
         noti.archived === false ? null : (
           <Fragment key={noti.id}>
-            <NotificationCard notification={noti} archiveButtonText={"Unarchive"} />
+            <NotificationCard notification={noti} />
           </Fragment>
         )
       )}

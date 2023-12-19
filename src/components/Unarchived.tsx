@@ -11,7 +11,6 @@ export default function Unarchived() {
           <Fragment key={noti.id}>
             <NotificationCard
               notification={noti}
-              archiveButtonText={"Archive"}
             />
           </Fragment>
         )

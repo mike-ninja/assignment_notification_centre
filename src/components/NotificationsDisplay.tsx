@@ -4,8 +4,8 @@ import Archived from "./Archived";
 import Unarchived from "./Unarchived";
 import { TabType } from "../types/types";
 
-export default function Notifications() {
-  const [tab, setTab] = useState<TabType>("Archived");
+export default function NotificationsDisplay() {
+  const [tab, setTab] = useState<TabType>("Unarchived");
 
   return (
     <>
