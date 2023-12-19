@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./styles/global.css";
+import { useEffect } from "react";
+import { Notifications } from "./components";
+import { notificationsData } from "./lib/data";
+import { useNotificationsContext } from "./context/NotificationsContext";
 
 function App() {
+  const { setNotifications } = useNotificationsContext();
+
+  useEffect(() => {
+    setNotifications(
+      notificationsData.map((notification, index) => ({
+        id: `id-${index}`,
+        title: notification.title,
+        description: notification.description,
+        date: new Date(notification.date),
+        category: notification.category,
+        read: notification.read,
+        archived: notification.archived,
+        interaction: notification.interaction,
+      })),
+    );
+  }, [setNotifications]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="section">
+      <div className="container">
+        <Notifications />
+      </div>
+    </section>
   );
 }
 
