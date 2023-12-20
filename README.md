@@ -29,7 +29,7 @@ Base:
   - Ability to mark as unread, read & archived along with the ability to this by bulk selection.
   - Indication at start up that after 60 days their notifications will not be displayed.
   - Using setState & useEffect to manage the application.
-  - 
+
 Bonus:
   - Break unarchived/archived notifications into two tabs
   - Show a loading page (fake 1s delay)
