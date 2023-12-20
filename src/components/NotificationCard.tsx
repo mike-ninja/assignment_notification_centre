@@ -43,8 +43,10 @@ export default function NotificationCard(
           <NotificationIcon {...notification} />
           <h2 className="notification_title_header">{notification.title}</h2>
         </div>
-        <p style={{ paddingLeft: 10 }}>{notification.description}</p>
-        <p style={{ paddingLeft: 10 }}>
+        <p style={{ paddingLeft: 10, fontStyle: "italic" }}>
+          {notification.description}
+        </p>
+        <p style={{ paddingLeft: 10, fontWeight: "lighter" }}>
           {dayjs(notification.date).format("DD MMMM, YYYY")}
         </p>
       </a>
