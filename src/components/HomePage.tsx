@@ -1,7 +1,7 @@
 import "../styles/global.css";
+import Loading from "./Loading";
 import { useEffect, useState } from "react";
 import NotificationsDisplay from "./NotificationsDisplay";
-import Loading from "./Loading";
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);

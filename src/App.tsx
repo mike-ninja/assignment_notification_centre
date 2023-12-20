@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { notificationsData } from "./lib/data";
-import { HomePage, NotificationPage } from "./components";
+import { HomePage, NotificationPage, Warning } from "./components";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useNotificationsContext } from "./context/NotificationsContext";
 
 function App() {
   const { setNotifications } = useNotificationsContext();
+
 
   useEffect(() => {
     setNotifications(
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <section className="section">
+      <Warning />
       <div className="container">
         <RouterProvider router={router} />
       </div>

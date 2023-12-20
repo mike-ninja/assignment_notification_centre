@@ -1,0 +1,33 @@
+.warning_wrapper {
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  padding: 1.5rem 0;
+  position: absolute;
+  justify-content: center;
+  transition: transform 1.5s ease-in-out;
+}
+
+.warning_wrapper_hide {
+  transform: translateY(-100%) !important;
+}
+
+.warning_wrapper_show {
+  transform: translateY(0);
+}
+
+.warning_header {
+  color: white;
+  padding: 0.7rem;
+  width: fit-content;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(
+    to right,
+    #dc174b,
+    #d452b3,
+    #8a90f9,
+    #00bcff,
+    #12d9eb
+  );
+}

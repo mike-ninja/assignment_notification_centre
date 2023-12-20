@@ -32,11 +32,11 @@ export const notificationsData = [
     interactions: [
       {
         name: "Alice Smith",
-        category: "COMMENT",
+        category: "READ",
       },
       {
         name: "Alice Smith",
-        category: "TASK",
+        category: "COMMENT",
       },
     ],
   },

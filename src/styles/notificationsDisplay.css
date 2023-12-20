@@ -21,3 +21,9 @@
   background-color: #000;
   color: white;
 }
+
+.bulk_actions_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem 0.4rem;
+}

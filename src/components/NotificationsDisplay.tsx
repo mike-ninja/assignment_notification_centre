@@ -1,12 +1,12 @@
 import clsx from "clsx";
 import { TabType } from "../types/types";
 import { Fragment, useState } from "react";
-import NotificationCard from "./NotificationCard";
-import { useNotificationsContext } from "../context/NotificationsContext";
+import "../styles/notificationsDisplay.css";
 import CheckedNotificationsContextProvider, {
   useCheckedNotificationsContext,
 } from "../context/CheckedNotificationsContext";
-import "../styles/notificationsDisplay.css";
+import NotificationCard from "./NotificationCard";
+import { useNotificationsContext } from "../context/NotificationsContext";
 
 export default function NotificationsDisplay() {
   const [tab, setTab] = useState<TabType>("Unarchived");
@@ -114,28 +114,28 @@ function BulkActions() {
       <button
         type="button"
         onClick={() => handleArchiveOnClick(true)}
-        className="bulk_action_button"
+        className="button"
       >
         Archive
       </button>
       <button
         type="button"
         onClick={() => handleArchiveOnClick(false)}
-        className="bulk_action_button"
+        className="button"
       >
         Unarchive
       </button>
       <button
         type="button"
         onClick={() => handleReadOnClick(true)}
-        className="bulk_action_button"
+        className="button"
       >
         Mark as read
       </button>
       <button
         type="button"
         onClick={() => handleReadOnClick(false)}
-        className="bulk_action_button"
+        className="button"
       >
         Mark as unread
       </button>

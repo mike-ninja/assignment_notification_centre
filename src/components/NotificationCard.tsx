@@ -1,10 +1,9 @@
 import dayjs from "dayjs";
+import "../styles/notificationCard.css";
 import NotificationIcon from "./NotificationIcon";
 import { NotificationType } from "../types/types";
 import NotificationButtons from "./NotificationButtons";
 import { useCheckedNotificationsContext } from "../context/CheckedNotificationsContext";
-import "../styles/notificationCard.css";
-import clsx from "clsx";
 
 export default function NotificationCard(
   { notification, index }: {

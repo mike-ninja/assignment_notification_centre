@@ -1,7 +1,7 @@
 import "../styles/notificationPage.css";
 import { useParams } from "react-router-dom";
-import { useNotificationsContext } from "../context/NotificationsContext";
 import NotificationButtons from "./NotificationButtons";
+import { useNotificationsContext } from "../context/NotificationsContext";
 
 export default function NotificationPage() {
   const { id } = useParams<{ id: string }>();

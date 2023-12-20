@@ -2,7 +2,7 @@ export type CategoryType = "TASK" | "REMINDER" | "COMMENT";
 
 type InteractionType = {
   name: string;
-  category: CategoryType;
+  category: CategoryType | "READ";
 };
 
 export type NotificationType = {
