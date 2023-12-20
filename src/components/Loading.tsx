@@ -1,4 +1,4 @@
-import React from "react";
+import "../styles/loading.css";
 import logo from "../logo.svg";
 
 export default function Loading() {

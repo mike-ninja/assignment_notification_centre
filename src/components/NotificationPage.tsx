@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import { useNotificationsContext } from "../context/NotificationsContext";
 import NotificationButtons from "./NotificationButtons";
@@ -21,14 +20,14 @@ export default function NotificationPage() {
   return (
     <>
       <div>
-        <h1>{notification.title}</h1>
+        <h2>{notification.title}</h2>
         <p>{notification.description}</p>
       </div>
       {notification.interactions && (
         <div>
           {notification.interactions.map((interaction, index) => (
             <div key={index}>
-              <h2>{interaction.name}</h2>
+              <h3>{interaction.name}</h3>
               <p>{interaction.category}</p>
             </div>
           ))}

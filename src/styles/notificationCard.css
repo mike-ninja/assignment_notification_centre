@@ -1,0 +1,70 @@
+.notification_wrapper {
+  position: relative;
+  z-index: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.notification_wrapper::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #3498db !important;
+  transition: width 0.3s ease;
+}
+
+.notification_wrapper:hover::before {
+  width: 100%;
+}
+
+.notification_title_wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  gap: 0.5rem;
+  margin: 0 0 0.2rem 0;
+}
+
+.notification_title {
+  font-size: 1.4rem;
+}
+
+.notification_icon {
+  font-size: 1.1rem;
+}
+
+.notification_buttons_wrapper {
+  position: absolute;
+  right: 1%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  gap: 0.2rem;
+}
+
+.notification_button {
+  flex: 1;
+  min-width: 7rem;
+}
+
+.checkbox_container {
+  display: flex;
+  align-items: center; /* Align checkbox with text vertically */
+}
+
+.checkbox_input {
+  width: 18px; /* Adjust the width of the checkbox */
+  height: 18px; /* Adjust the height of the checkbox */
+  margin-right: 8px; /* Add some spacing between the checkbox and the text */
+}
+
+/* Optional: Style the label text */
+.checkbox-label {
+  font-size: 16px; /* Adjust the font size of the label text */
+}
