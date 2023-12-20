@@ -3,10 +3,11 @@
   z-index: 0;
   border-radius: 5px;
   overflow: hidden;
+  min-height: 5rem;
 }
 
 .notification_wrapper::before {
-  content: '';
+  content: "";
   z-index: -1;
   position: absolute;
   top: 0;
@@ -19,6 +20,22 @@
 
 .notification_wrapper:hover::before {
   width: 100%;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-10%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.notification_icon_bounce {
+  animation: bounce 1s infinite;
 }
 
 .notification_title_wrapper {
@@ -48,23 +65,13 @@
   gap: 0.2rem;
 }
 
-.notification_button {
-  flex: 1;
-  min-width: 7rem;
-}
-
 .checkbox_container {
   display: flex;
-  align-items: center; /* Align checkbox with text vertically */
+  align-items: center;
 }
 
 .checkbox_input {
-  width: 18px; /* Adjust the width of the checkbox */
-  height: 18px; /* Adjust the height of the checkbox */
-  margin-right: 8px; /* Add some spacing between the checkbox and the text */
-}
-
-/* Optional: Style the label text */
-.checkbox-label {
-  font-size: 16px; /* Adjust the font size of the label text */
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
 }

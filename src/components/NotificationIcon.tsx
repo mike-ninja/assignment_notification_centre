@@ -1,19 +1,38 @@
+import clsx from "clsx";
 import { FaTasks } from "react-icons/fa";
-import { CategoryType } from "../types/types";
-import { MdOutlineNotificationsActive } from "react-icons/md";
 import { FaRegComment } from "react-icons/fa";
+import { NotificationType } from "../types/types";
+import { MdOutlineNotificationsActive } from "react-icons/md";
 
 export default function NotificationIcon(
-  { notificationCategory }: { notificationCategory: CategoryType },
+  notification: NotificationType,
 ) {
   return (
     <>
-      {notificationCategory === "TASK" &&
-        <FaTasks className="notification_icon" />}
-      {notificationCategory === "REMINDER" &&
-        <MdOutlineNotificationsActive className="notification_icon" />}
-      {notificationCategory === "COMMENT" &&
-        <FaRegComment className="notification_icon" />}
+      {notification.category === "TASK" &&
+        (
+          <FaTasks
+            className={clsx("notification_icon", {
+              "notification_icon_bounce": !notification.read,
+            })}
+          />
+        )}
+      {notification.category === "REMINDER" &&
+        (
+          <MdOutlineNotificationsActive
+            className={clsx("notification_icon", {
+              "notification_icon_bounce": !notification.read,
+            })}
+          />
+        )}
+      {notification.category === "COMMENT" &&
+        (
+          <FaRegComment
+            className={clsx("notification_icon", {
+              "notification_icon_bounce": !notification.read,
+            })}
+          />
+        )}
     </>
   );
 }

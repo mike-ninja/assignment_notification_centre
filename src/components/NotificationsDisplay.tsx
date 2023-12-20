@@ -91,28 +91,19 @@ function BulkActions() {
 
   if (checkedNotifications.length === 0) return null;
 
-  const handleArchiveOnClick = () => {
+  const handleArchiveOnClick = (status: boolean) => {
     const newNotifications = [...notifications];
     checkedNotifications.forEach((checkedNotification) => {
-      newNotifications[checkedNotification].archived = true;
+      newNotifications[checkedNotification].archived = status;
     });
     setNotifications([...newNotifications]);
     setCheckedNotifications([]);
   };
 
-  const handleReadOnClick = () => {
+  const handleReadOnClick = (status: boolean) => {
     const newNotifications = [...notifications];
     checkedNotifications.forEach((checkedNotification) => {
-      newNotifications[checkedNotification].read = true;
-    });
-    setNotifications([...newNotifications]);
-    setCheckedNotifications([]);
-  };
-
-  const handleUnreadOnClick = () => {
-    const newNotifications = [...notifications];
-    checkedNotifications.forEach((checkedNotification) => {
-      newNotifications[checkedNotification].read = false;
+      newNotifications[checkedNotification].read = status;
     });
     setNotifications([...newNotifications]);
     setCheckedNotifications([]);
@@ -122,21 +113,28 @@ function BulkActions() {
     <div className="bulk_actions_wrapper">
       <button
         type="button"
-        onClick={handleArchiveOnClick}
+        onClick={() => handleArchiveOnClick(true)}
         className="bulk_action_button"
       >
         Archive
       </button>
       <button
         type="button"
-        onClick={handleReadOnClick}
+        onClick={() => handleArchiveOnClick(false)}
+        className="bulk_action_button"
+      >
+        Unarchive
+      </button>
+      <button
+        type="button"
+        onClick={() => handleReadOnClick(true)}
         className="bulk_action_button"
       >
         Mark as read
       </button>
       <button
         type="button"
-        onClick={handleUnreadOnClick}
+        onClick={() => handleReadOnClick(false)}
         className="bulk_action_button"
       >
         Mark as unread

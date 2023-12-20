@@ -4,6 +4,7 @@ import { NotificationType } from "../types/types";
 import NotificationButtons from "./NotificationButtons";
 import { useCheckedNotificationsContext } from "../context/CheckedNotificationsContext";
 import "../styles/notificationCard.css";
+import clsx from "clsx";
 
 export default function NotificationCard(
   { notification, index }: {
@@ -17,7 +18,7 @@ export default function NotificationCard(
   return (
     <div
       style={{
-        backgroundColor: notification.read ? "#f0f0f0" : "transparent",
+        backgroundColor: notification.read ? "#C5D8D1" : "transparent",
       }}
       className="notification_wrapper"
     >
@@ -40,7 +41,7 @@ export default function NotificationCard(
               }}
             />
           </div>
-          <NotificationIcon notificationCategory={notification.category} />
+          <NotificationIcon {...notification} />
           <h2 className="notification_title_header">{notification.title}</h2>
         </div>
         <p style={{ paddingLeft: 10 }}>{notification.description}</p>

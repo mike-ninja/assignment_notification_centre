@@ -1,3 +1,4 @@
+import "../styles/notificationPage.css";
 import { useParams } from "react-router-dom";
 import { useNotificationsContext } from "../context/NotificationsContext";
 import NotificationButtons from "./NotificationButtons";
@@ -24,16 +25,17 @@ export default function NotificationPage() {
         <p>{notification.description}</p>
       </div>
       {notification.interactions && (
-        <div>
+        <div className="interactions_wrapper">
+          <h2 style={{ marginTop: 15 }}>Interactions</h2>
           {notification.interactions.map((interaction, index) => (
-            <div key={index}>
+            <div key={index} style={{ paddingLeft: 10 }}>
               <h3>{interaction.name}</h3>
-              <p>{interaction.category}</p>
+              <p style={{ paddingLeft: 5 }}>{interaction.category}</p>
             </div>
           ))}
         </div>
       )}
-      <div>
+      <div className="buttons_wrapper">
         <NotificationButtons notification={notification} />
       </div>
     </>

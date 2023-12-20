@@ -26,14 +26,14 @@ export default function NotificationButtons(
       <button
         type="button"
         onClick={() => handleArchiveOnClick(notification.id)}
-        className="notification_button"
+        className="button"
       >
         {notification.archived ? "Unarchive" : "Archive"}
       </button>
       <button
         type="button"
         onClick={() => handleReadOnClick(notification.id)}
-        className="notification_button"
+        className="button"
       >
         {notification.read ? "Mark as unread" : "Mark as read"}
       </button>

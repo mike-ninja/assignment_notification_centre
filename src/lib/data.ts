@@ -34,6 +34,10 @@ export const notificationsData = [
         name: "Alice Smith",
         category: "COMMENT",
       },
+      {
+        name: "Alice Smith",
+        category: "TASK",
+      },
     ],
   },
   {
