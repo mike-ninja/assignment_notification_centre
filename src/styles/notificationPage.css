@@ -58,3 +58,9 @@
     #a8eb12
   );
 }
+
+.notificaton_page_wrapper {
+  display: flex;
+  flex-direction: column;
+
+}

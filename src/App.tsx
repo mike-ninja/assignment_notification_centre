@@ -7,7 +7,6 @@ import { useNotificationsContext } from "./context/NotificationsContext";
 function App() {
   const { setNotifications } = useNotificationsContext();
 
-
   useEffect(() => {
     setNotifications(
       notificationsData.map((notification, index) => ({
@@ -28,20 +27,30 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <HomePage />,
+      element: (
+        <>
+          <Warning />
+          <div className="container">
+            <HomePage />
+          </div>
+        </>
+      ),
     },
     {
       path: "/notification/:id",
-      element: <NotificationPage />,
+      element: (
+        <>
+          <div className="container">
+            <NotificationPage />
+          </div>
+        </>
+      ),
     },
   ]);
 
   return (
     <section className="section">
-      <Warning />
-      <div className="container">
-        <RouterProvider router={router} />
-      </div>
+      <RouterProvider router={router} />
     </section>
   );
 }
