@@ -3,9 +3,13 @@ import "../styles/warning.css";
 import { useEffect, useState } from "react";
 
 export default function Warning() {
-  const [warning, setWarning] = useState<boolean>(true);
+  const [warning, setWarning] = useState<boolean>(false);
 
   useEffect(() => {
+    setTimeout(() => {
+      setWarning(true);
+    }, 1000);
+
     setTimeout(() => {
       setWarning(false);
     }, 4000);
