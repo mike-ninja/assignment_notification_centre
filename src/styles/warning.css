@@ -18,16 +18,22 @@
 }
 
 .warning_header {
-  color: white;
   padding: 0.7rem;
   width: fit-content;
   border-radius: 0.5rem;
   background-image: linear-gradient(
-    to right,
-    #dc174b,
-    #d452b3,
-    #8a90f9,
-    #00bcff,
-    #12d9eb
+    to right bottom,
+    #ffffff,
+    #f6faff,
+    #e7f7ff,
+    #d4f6ff,
+    #c2f4f6,
+    #b7f4f1,
+    #aef4e9,
+    #a7f3df,
+    #99f5e2,
+    #89f7e6,
+    #77f9eb,
+    #5ffbf1
   );
 }

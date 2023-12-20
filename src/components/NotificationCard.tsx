@@ -15,31 +15,51 @@ export default function NotificationCard(
     useCheckedNotificationsContext();
 
   return (
-    <div
-      style={{
-        backgroundColor: notification.read ? "#C5D8D1" : "transparent",
-      }}
-      className="notification_wrapper"
-    >
-      <a href={`/notification/${notification.id}`}>
+    <div className="notification_wrapper">
+      <div className="checkbox_wrapper">
+        <input
+          type="checkbox"
+          className="checkbox_input"
+          checked={checkedNotifications.includes(index)}
+          onChange={() => {
+            const isChecked = checkedNotifications.includes(index);
+            if (isChecked) {
+              setCheckedNotifications(
+                checkedNotifications.filter((item) => item !== index),
+              );
+            } else {
+              setCheckedNotifications([...checkedNotifications, index]);
+            }
+          }}
+        />
+        <label />
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M 10 10 L 90 90"
+            stroke="#000"
+            stroke-dasharray="113"
+            stroke-dashoffset="113"
+          >
+          </path>
+          <path
+            d="M 90 10 L 10 90"
+            stroke="#000"
+            stroke-dasharray="113"
+            stroke-dashoffset="113"
+          >
+          </path>
+        </svg>
+      </div>
+
+      <div className="notification_divider" />
+      <a
+        style={{
+          backgroundColor: notification.read ? "#f9fafb" : "transparent",
+        }}
+        href={`/notification/${notification.id}`}
+        className="notification_link"
+      >
         <div className="notification_title_wrapper">
-          <div className="checkbox_container">
-            <input
-              type="checkbox"
-              className="checkbox_input"
-              checked={checkedNotifications.includes(index)}
-              onChange={() => {
-                const isChecked = checkedNotifications.includes(index);
-                if (isChecked) {
-                  setCheckedNotifications(
-                    checkedNotifications.filter((item) => item !== index),
-                  );
-                } else {
-                  setCheckedNotifications([...checkedNotifications, index]);
-                }
-              }}
-            />
-          </div>
           <NotificationIcon {...notification} />
           <h2 className="notification_title_header">{notification.title}</h2>
         </div>

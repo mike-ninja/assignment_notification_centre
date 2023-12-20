@@ -34,7 +34,7 @@ function Tabs(
           setTab("Unarchived");
           setCheckedNotifications([]);
         }}
-        className={clsx("tab", tab === "Unarchived" && "active_tab")}
+        className={clsx("button", tab === "Unarchived" && "active_tab")}
       >
         Unarchived
       </button>
@@ -44,7 +44,7 @@ function Tabs(
           setTab("Archived");
           setCheckedNotifications([]);
         }}
-        className={clsx("tab", tab === "Archived" && "active_tab")}
+        className={clsx("button", tab === "Archived" && "active_tab")}
       >
         Archived
       </button>

@@ -1,12 +1,60 @@
+.notificaton_page_header_wrapper {
+  padding: 1rem 0 0 0;
+  margin-bottom: 1rem;
+}
+
+.notification_page_title_wrapper {
+  display: flex;
+}
+
+.notification_page_title {
+  text-transform: capitalize;
+  font-size: 1.7rem;
+}
+
+.notification_page_title_category {
+  text-transform: lowercase !important;
+}
+
+.interactions_title {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+  font-weight: 400;
+}
+
 .interactions_wrapper {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
+.interactions_row_wrapper {
+  background-color: white;
+  width: fit-content;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+  font-weight: 400;
+  border: 1px solid #e0e0e0;
+}
+
 .buttons_wrapper {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  display: flex;
+  gap: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
   width: 100%;
+}
+
+.link_home {
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(
+    to right top,
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72,
+    #a8eb12
+  );
 }
