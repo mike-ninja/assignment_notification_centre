@@ -17,10 +17,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### Some information
 
-Dummy data in /lib/data.ts for different notifications
-  - Task
-  - Reminder
-  - Comment
+Dummy data in `/lib/data.ts` for an array notifications
+  - Tasks
+  - Reminders
+  - Comments
 
 ### What was achieved
 
